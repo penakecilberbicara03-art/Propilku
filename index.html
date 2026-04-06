@@ -1,50 +1,191 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio of Wildan Soleh</title>
+    <title>Portfolio & Kegiatan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        header { background: #333; color: #fff; padding: 10px 0; text-align: center; }
-        section { padding: 20px; }
-        .projects { display: flex; flex-wrap: wrap; gap: 20px; }
-        .project { border: 1px solid #ccc; padding: 10px; width: calc(33% - 20px); }
+        :root {
+            --primary: #1a73e8; /* Warna khas Google */
+            --text-main: #3c4043;
+            --text-light: #70757a;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            background: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        .logo { font-weight: 600; font-size: 1.2rem; color: var(--primary); }
+
+        nav ul { display: flex; list-style: none; }
+
+        nav ul li { margin-left: 25px; }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            transition: 0.2s;
+        }
+
+        nav ul li a:hover { color: var(--primary); }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: var(--white);
+            padding: 80px 10%;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+
+        .hero p { color: var(--text-light); font-size: 1.1rem; }
+
+        /* --- Section Styling --- */
+        section { padding: 60px 10%; }
+
+        h2 { 
+            font-size: 1.8rem; 
+            margin-bottom: 30px; 
+            border-left: 5px solid var(--primary);
+            padding-left: 15px;
+        }
+
+        /* --- Kegiatan Grid (Ala Google Sites) --- */
+        .grid-kegiatan {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border: 1px solid #efefef;
+        }
+
+        .card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+        .card-img {
+            width: 100%;
+            height: 180px;
+            background-color: #e8eaed; /* Placeholder warna abu-abu */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9aa0a6;
+        }
+
+        .card-content { padding: 20px; }
+
+        .card-content h3 { font-size: 1.1rem; margin-bottom: 10px; }
+
+        .card-content p { font-size: 0.9rem; color: var(--text-light); }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: var(--white);
+            border-top: 1px solid #e0e0e0;
+            margin-top: 50px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav { flex-direction: column; }
+            nav ul { margin-top: 15px; }
+            nav ul li { margin: 0 10px; }
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Wildan Soleh's Portfolio</h1>
-</header>
+    <nav>
+        <div class="logo">MyPortfolio</div>
+        <ul>
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#kegiatan">Kegiatan</a></li>
+            <li><a href="#kontak">Hubungi</a></li>
+        </ul>
+    </nav>
 
-<section>
-    <h2>About Me</h2>
-    <p>Welcome to my portfolio! I am a passionate developer with experience in creating web applications and software solutions.</p>
+    <header class="hero" id="home">
+        <h1>Halo, Selamat Datang</h1>
+        <p>Eksplorasi proyek dan aktivitas terbaru saya di sini.</p>
+    </header>
 
-    <h2>Projects</h2>
-    <div class="projects">
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>Description of the first project.</p>
-            <a href="#">View Project</a>
-        </div>
-        <div class="project">
-            <h3>Project 2</h3>
-            <p>Description of the second project.</p>
-            <a href="#">View Project</a>
-        </div>
-        <div class="project">
-            <h3>Project 3</h3>
-            <p>Description of the third project.</p>
-            <a href="#">View Project</a>
-        </div>
-    </div>
-</section>
+    <section id="kegiatan">
+        <h2>Daftar Kegiatan</h2>
+        <div class="grid-kegiatan">
+            
+            <div class="card">
+                <div class="card-img">Foto Kegiatan 1</div>
+                <div class="card-content">
+                    <h3>Judul Kegiatan atau Proyek</h3>
+                    <p>Deskripsi singkat mengenai apa yang Anda lakukan dalam kegiatan ini dan hasil yang dicapai.</p>
+                </div>
+            </div>
 
-<footer>
-    <p>Contact: wildansoleh@example.com</p>
-</footer>
+            <div class="card">
+                <div class="card-img">Foto Kegiatan 2</div>
+                <div class="card-content">
+                    <h3>Seminar & Workshop</h3>
+                    <p>Berbagi pengalaman saat mengikuti kegiatan pengembangan diri atau pelatihan teknis.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img">Foto Kegiatan 3</div>
+                <div class="card-content">
+                    <h3>Organisasi / Komunitas</h3>
+                    <p>Keterlibatan aktif dalam organisasi kampus atau komunitas profesional di bidang IT.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="kontak" style="background: var(--white);">
+        <h2>Hubungi Saya</h2>
+        <p>Ingin bekerja sama atau sekadar menyapa? Silakan kirim pesan melalui email di bawah ini:</p>
+        <div style="margin-top: 20px;">
+            <strong>Email:</strong> <a href="mailto:email@contoh.com" style="color: var(--primary);">email@anda.com</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Nama Anda. Dibuat dengan struktur bersih & modern.</p>
+    </footer>
 
 </body>
 </html>
